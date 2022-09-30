@@ -11,7 +11,7 @@
 				</div>
 				<div class="row">
 					<div class="l">单位</div>
-					<div class="r"><input class="text-input" type="text" value="Colleges in Home University(CMU)" /></div>
+					<div class="r"><input class="text-input" type="text" value="Colleges in Home University" /></div>
 				</div>
 				<div class="row">
 					<div class="l">院系</div>
