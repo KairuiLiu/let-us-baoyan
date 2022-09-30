@@ -1,61 +1,63 @@
 <template>
-	<div id="form-wapper" :style="{ width: `${infoWidth}%` }">
-		<div class="titlebar">
-			<span class="title">志愿信息</span>
-		</div>
-		<div class="info">
-			<div class="row">
-				<div class="l">层次</div>
-				<div class="r"><input class="text-input" type="text" value="Master" /></div>
+	<div class="pad">
+		<div id="form-wapper" :style="{ width: `${infoWidth}%` }">
+			<div class="titlebar">
+				<span class="title">志愿信息</span>
 			</div>
-			<div class="row">
-				<div class="l">单位</div>
-				<div class="r"><input class="text-input" type="text" value="Colleges in Home University(CMU)" /></div>
+			<div class="info">
+				<div class="row">
+					<div class="l">层次</div>
+					<div class="r"><input class="text-input" type="text" value="Master" /></div>
+				</div>
+				<div class="row">
+					<div class="l">单位</div>
+					<div class="r"><input class="text-input" type="text" value="Colleges in Home University(CMU)" /></div>
+				</div>
+				<div class="row">
+					<div class="l">院系</div>
+					<div class="r"><input class="text-input" type="text" value="St. Chi College" /></div>
+				</div>
+				<div class="row">
+					<div class="l">专业</div>
+					<div class="r"><input class="text-input" type="text" value="Lie Flat（114514）" /></div>
+				</div>
+				<div class="row">
+					<div class="l">学习方式</div>
+					<div class="r"><input class="text-input" type="text" value="Self learning" /></div>
+				</div>
+				<div class="row">
+					<div class="l">研究方向</div>
+					<div class="r"><input class="text-input" type="text" value="Sell Vegetable" /></div>
+				</div>
+				<div class="row">
+					<div class="l">导师</div>
+					<div class="r"><input class="text-input" type="text" value="KevinZonda" /></div>
+				</div>
+				<div class="row">
+					<div class="l">专项计划类型</div>
+					<div class="r"><input class="text-input" type="text" value="非专项计划" /></div>
+				</div>
+				<div class="row">
+					<div class="l">就业类型</div>
+					<div class="r"><input class="text-input" type="text" value="非定向就业" /></div>
+				</div>
 			</div>
-			<div class="row">
-				<div class="l">院系</div>
-				<div class="r"><input class="text-input" type="text" value="St. Chi College" /></div>
+			<div class="titlebar">
+				<span class="title yellow">待录取通知</span>
+				<span class="note">&nbsp;&nbsp;接受或拒绝待录取通知后，将无法更改。</span>
 			</div>
-			<div class="row">
-				<div class="l">专业</div>
-				<div class="r"><input class="text-input" type="text" value="Lie Flat（114514）" /></div>
-			</div>
-			<div class="row">
-				<div class="l">学习方式</div>
-				<div class="r"><input class="text-input" type="text" value="Self learning" /></div>
-			</div>
-			<div class="row">
-				<div class="l">研究方向</div>
-				<div class="r"><input class="text-input" type="text" value="Sell Vegetable" /></div>
-			</div>
-			<div class="row">
-				<div class="l">导师</div>
-				<div class="r"><input class="text-input" type="text" value="KevinZonda" /></div>
-			</div>
-			<div class="row">
-				<div class="l">专项计划类型</div>
-				<div class="r"><input class="text-input" type="text" value="非专项计划" /></div>
-			</div>
-			<div class="row">
-				<div class="l">就业类型</div>
-				<div class="r"><input class="text-input" type="text" value="非定向就业" /></div>
-			</div>
-		</div>
-		<div class="titlebar">
-			<span class="title yellow">待录取通知</span>
-			<span class="note">&nbsp;&nbsp;接受或拒绝待录取通知后，将无法更改。</span>
-		</div>
-		<div class="info">
-			<div class="note"><input class="text-input" type="text" value="Colleges in Home University 招生办 2022-09-31 00:00" /></div>
-			<div class="blueball">
-				您已被拟录取，请尽快确认。
-				<div class="result">
-					<div class="result-box" :class="state">
-						<span class="icon"
-							><el-icon v-if="state === 'accept'"><CircleCheckFilled /></el-icon>
-							<el-icon v-else><CircleCloseFilled /></el-icon>
-						</span>
-						<span> <input v-model="textRes" class="text-input" type="text" :style="{ width: mirror?.offsetWidth ? `${mirror.offsetWidth + 4}px` : 'unset' }" /> </span>
+			<div class="info">
+				<div class="note"><input class="text-input" type="text" value="Colleges in Home University 招生办 2022-09-31 00:00" /></div>
+				<div class="blueball">
+					您已被拟录取，请尽快确认。
+					<div class="result">
+						<div class="result-box" :class="state">
+							<span class="icon"
+								><el-icon v-if="state === 'accept'"><CircleCheckFilled /></el-icon>
+								<el-icon v-else><CircleCloseFilled /></el-icon>
+							</span>
+							<span> <input v-model="textRes" class="text-input" type="text" :style="{ width: mirror?.offsetWidth ? `${mirror.offsetWidth + 4}px` : 'unset' }" /> </span>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -119,10 +121,15 @@ export default defineComponent({
 </script>
 
 <style lang="less" scoped>
+.pad {
+	display: flex;
+	justify-content: space-around;
+}
+
 #form-wapper {
 	position: relative;
-	left: 50%;
-	transform: translateX(-50%);
+	// left: 50%;
+	// transform: translateX(-50%);
 	// min-width: 640px;
 	// max-width: 70vw;
 	border: 1px solid #cacaca;
